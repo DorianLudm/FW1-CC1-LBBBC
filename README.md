@@ -30,3 +30,21 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver 0.0.0.0:8000
 ```
+
+## Création d'un objet de classe Collec
+```bash
+python manage.py shell
+```
+
+```py
+from collec_management.models import Collec
+from django.utils import timezone
+Collec.objects.all()
+#<QuerySet []> -> table vide
+c=Collec(title="Liste.",description="Ceci est ma collection Liste.",date=timezone.now())
+c.id
+c.save()
+Collec.objects.all()
+#<QuerySet [<Collec: Liste>]> -> table avec un objet de classe Class
+quit()
+```
