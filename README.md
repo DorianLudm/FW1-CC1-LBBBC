@@ -1,4 +1,4 @@
-# Projet Djungo - Gestionnaire de collections
+# Projet Django - Gestionnaire de collections
 
 ## Membres
 Prénom | NOM | Adresse universitaire  
