@@ -58,7 +58,9 @@ ROOT_URLCONF = 'cc.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            "collec_management/templates"    
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
