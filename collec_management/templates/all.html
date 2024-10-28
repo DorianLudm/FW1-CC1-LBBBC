@@ -10,7 +10,8 @@
         <tr>
             <th>Titre: {{collect.title}}</th>
             <th>Date: {{collect.date}}</th>
-            <th><a href = {% url 'collection' collect.id %}>Lien</a></th>
+            <th><a href = "{% url 'collection' collect.id %}">Lien</a></th>
+            <th><a href="{% url 'delete_collection' collect.id %}">Supprimer</a> </th>
         </tr>
         {% endfor %}
     </table>
