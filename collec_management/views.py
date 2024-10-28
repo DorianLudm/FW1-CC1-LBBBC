@@ -38,3 +38,13 @@ def delete_collection(request, collection_id):
         return redirect('all') 
 
     return render(request, 'delete_collection.html', {'collection': collection})
+
+def update_collection(request,id):
+    collec = get_object_or_404(Collec, pk=id)
+    if request.method == 'POST':
+        collec.title = request.POST.get('title')
+        collec.description = request.POST.get('description')
+        collec.save()
+        return redirect('all')
+    else:
+        return render(request, 'update_collection.html',context={'collec':collec})
