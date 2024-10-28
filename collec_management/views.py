@@ -12,3 +12,8 @@ def collection(request,collection_id):
     except Collec.DoesNotExist:
         raise Http404("La collection n'existe pas.")
     return render(request,"collection.html",{"collection" : collection})
+
+def all(request):
+    collections = Collec.objects.order_by("date")
+    context = {"all_collections" : collections}
+    return render(request,"all.html",context)
