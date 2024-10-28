@@ -1,14 +1,24 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Collection</title>
-</head>
-<body>
-    <h1>{{collection.title}}</h1>
-    <ul>
-        <li><b>Description: </b>{{collection.description}}</li>
-        <li><b>Date: </b>{{collection.date}}</li>
-    </ul>
-</body>
-</html>
+{% extends "basegen.html" %}
+{% block content %}
+{% load static %}
+
+<div class="container my-5">
+    <h1 class="text-center display-4 my-4">{{ collection.title }}</h1>
+    <div class="border p-4 bg-light shadow-sm">
+        <div class="card-body">
+            <h5 class="card-title">Détails de la Collection</h5>
+            <ul class="list-group list-group-flush list-unstyled">
+                <li class="ms-3">
+                    <strong>Description:</strong> {{ collection.description }}
+                </li>
+                <li class="ms-3">
+                    <strong>Date:</strong> {{ collection.date }}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
