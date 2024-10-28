@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from .models import Collec
+from django.shortcuts import render,redirect, get_object_or_404
 from collec_management.models import *
 from django.http import HttpResponse, Http404
 
@@ -27,3 +28,13 @@ def add_collection(request):
             return render(request, 'add_collection.html', {'success_message': 'Collection ajoutée avec succès !'})
     
     return render(request, 'add_collection.html')
+
+
+def delete_collection(request, collection_id):
+    collection = get_object_or_404(Collec, id=collection_id)
+    
+    if request.method == "POST":
+        collection.delete() 
+        return redirect('all') 
+
+    return render(request, 'delete_collection.html', {'collection': collection})
