@@ -12,3 +12,18 @@ def collection(request,collection_id):
     except Collec.DoesNotExist:
         raise Http404("La collection n'existe pas.")
     return render(request,"collection.html",{"collection" : collection})
+
+def all(request):
+    collections = Collec.objects.order_by("date")
+    context = {"all_collections" : collections}
+    return render(request,"all.html",context)
+
+def add_collection(request):
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        description = request.POST.get('description')
+        if title and description:
+            Collec.objects.create(title=title, description=description)
+            return render(request, 'add_collection.html', {'success_message': 'Collection ajoutée avec succès !'})
+    
+    return render(request, 'add_collection.html')

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>About</title>
+</head>
+<body>
+    <h1>Ajouter une nouvelle collection</h1>
+    {% if success_message %}
+    <p>{{ success_message }}</p>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <p>
+            <label for="title">Titre :</label>
+            <input type="text" id="title" name="title" required>
+        </p>
+        <p>
+            <label for="description">Description :</label>
+            <textarea id="description" name="description" required></textarea>
+        </p>
+        <button type="submit">Ajouter</button>
+    </form>
+    
+</body>
+</html>

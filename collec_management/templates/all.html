@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Collection</title>
+</head>
+<body>
+    <h1>Les collections</h1>
+    <table>{% for collect in all_collections %}
+        <tr>
+            <th>Titre: {{collect.title}}</th>
+            <th>Date: {{collect.date}}</th>
+            <th><a href = {% url 'collection' collect.id %}>Lien</a></th>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
