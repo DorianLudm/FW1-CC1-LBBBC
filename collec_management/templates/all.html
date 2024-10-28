@@ -12,6 +12,7 @@
             <th>Date: {{collect.date}}</th>
             <th><a href = "{% url 'collection' collect.id %}">Lien</a></th>
             <th><a href="{% url 'delete_collection' collect.id %}">Supprimer</a> </th>
+            <th><a href="{% url 'update_collection' collect.id %}">Modifier</a> </th>
         </tr>
         {% endfor %}
     </table>
