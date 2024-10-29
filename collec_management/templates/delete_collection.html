@@ -1,16 +1,23 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Confirmer la Suppression</title>
-</head>
-<body>
-    <h1>Confirmer la Suppression</h1>
-    <p>Êtes-vous sûr de vouloir supprimer "{{ collection.title }}" ?</p>
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit">Confirmer</button>
-    </form>
-    <a href="{% url 'all' %}">Annuler</a>
-</body>
-</html>
+{% extends "basegen.html" %}
+{% block content %}
+{% load static %}
+
+<div class="container my-5">
+    <div class="card border-danger shadow-sm">
+        <div class="card-body text-center">
+            <h1 class="card-title text-danger">Confirmer la Suppression</h1>
+            <p class="card-text">
+                Êtes-vous sûr de vouloir supprimer <strong>"{{ collection.title }}"</strong> ?
+            </p>
+            <form method="post" class="d-inline">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger mx-2">Confirmer</button>
+            </form>
+
+            <a href="{% url 'all' %}" class="btn btn-secondary mx-2">Annuler</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

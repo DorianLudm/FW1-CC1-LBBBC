@@ -48,3 +48,8 @@ Collec.objects.all()
 #<QuerySet [<Collec: Liste>]> -> table avec un objet de classe Class
 quit()
 ```
+
+## Installation de Django-Bootstrap5
+```bash
+python3 -m pip install django-bootstrap5
+```

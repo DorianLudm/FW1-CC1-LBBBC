@@ -4,6 +4,9 @@ from collec_management.models import *
 from django.http import HttpResponse, Http404
 
 # Create your views here.
+def accueil(request):
+    return render(request, "accueil.html")
+
 def about(request):
     return render(request, "about.html")
 
