@@ -45,7 +45,7 @@ c=Collec(title="Liste.",description="Ceci est ma collection Liste.",date=timezon
 c.id
 c.save()
 Collec.objects.all()
-#<QuerySet [<Collec: Liste>]> -> table avec un objet de classe Class
+#<QuerySet [<Collec: Liste>]> -> table avec un objet de classe Collec
 quit()
 ```
 
